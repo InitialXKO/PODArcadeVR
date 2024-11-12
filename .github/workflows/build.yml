@@ -37,6 +37,8 @@ jobs:
 
     - name: Restore dependencies  
       run: nuget restore "POD arcade project.sln" 
+    - name: Install Unity
+      run: winget install --id "Unity.Unity.2023" --exact --source winget --accept-source-agreements --disable-interactivity --silent --accept-package-agreements --force
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore the application
       run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
