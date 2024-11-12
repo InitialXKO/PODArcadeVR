@@ -36,7 +36,7 @@ jobs:
       uses: microsoft/setup-msbuild@v2
 
     - name: Restore dependencies  
-      run: nuget restore mame-ao.sln 
+      run: nuget restore "POD arcade project.sln" 
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore the application
       run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
